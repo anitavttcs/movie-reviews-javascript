@@ -16,11 +16,11 @@ app.use(
 // Database
 connectDB();
 
+// Routes
+app.use("/api/login", require("./routes/authRoutes"));
+
 // Middleware
 app.use(require("./middleware/errorHandler"));
-
-// Routes
-
 
 // Server
 app.listen(port, () => {
