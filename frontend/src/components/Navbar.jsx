@@ -39,7 +39,7 @@ const Navbar = ({ setUser, user }) => {
 
 								<li className="nav-item">
 									<Link to="/">
-										<button className="btn btn-outline-info my-2 my-sm-0" onClick={logout}>
+										<button className="btn btn-outline-success my-2 my-sm-0" onClick={logout}>
 											Logout
 										</button>
 									</Link>
@@ -49,7 +49,7 @@ const Navbar = ({ setUser, user }) => {
 
 						{!user &&
 							<li className="nav-item">
-								<button className="btn btn-outline-info my-2 my-sm-0" onClick={googleSignIn}>
+								<button className="btn btn-outline-success my-2 my-sm-0" onClick={googleSignIn}>
 									Login
 								</button>
 							</li>

@@ -7,6 +7,7 @@ import './App.css';
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Movie from "./pages/Movie";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -37,6 +38,12 @@ function App() {
 
             <Route exact path="/login">
               <Login checkToken={checkToken} />
+            </Route>
+
+            {/* <Route exact path="/movie/:id"> */}
+            {/* -- csak amíg nincs adat -- */}
+            <Route exact path="/movie">
+              <Movie user={user} />
             </Route>
 
           </Switch>
