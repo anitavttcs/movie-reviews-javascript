@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 const getMovies = async (req, res) => {
-    const page = req.params.page || 1;
+    const page = req.params.number || 1;
     const response = await fetch(`https://api.themoviedb.org/3/discover/movie?page=${page}&api_key=${process.env.API_KEY}`);
     const jsonResponse = await response.json();
     res.send(jsonResponse);
