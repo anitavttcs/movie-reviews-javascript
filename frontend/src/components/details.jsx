@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const Details = ({ movie }) => {
+  console.log(movie);
   return (
     <div className="detailsDiv">
       <div>{movie.overview}</div>
