@@ -1,8 +1,8 @@
 const jwt = require("jsonwebtoken");
 const authService = require("../services/authService");
 const fetch = require("node-fetch");
-const jwtDecode = require("jwt-decode");
-const { isValidObjectId } = require("mongoose");
+// const jwtDecode = require("jwt-decode");
+// const { isValidObjectId } = require("mongoose");
 require("dotenv/config");
 
 
@@ -42,7 +42,10 @@ async function loginCheck(req, res) {
 };
 
 async function userCheck(data, res) {
-	const { sub, name, email } = jwtDecode(data.id_token);
+	const { sub, name, email } = jwt.decode(data.id_token);
+
+	// const decoded = jwt.verify(data.id_token, process.env.SECRET);
+
 
 	const foundUser = await authService.getUser(email);
 	if (!foundUser) {
