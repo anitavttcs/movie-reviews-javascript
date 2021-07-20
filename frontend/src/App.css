@@ -25,7 +25,7 @@
 }
 
 .marker{
-  background-color: red;
+ 
  
 }
 
@@ -56,11 +56,12 @@
   background-color: hsl(253,57%,50%);
   text-align: center;
   color: whitesmoke;
- 
+
 }
 
 .detailButtonDiv{
   cursor: pointer;
+  color: var(--corn)
 }
 
 .cardNameDiv{
