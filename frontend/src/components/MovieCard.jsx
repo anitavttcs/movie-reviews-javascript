@@ -6,7 +6,7 @@ import styled from "styled-components";
 const MovieCard = ({ movie, user }) => {
   const [isOpen, setOpen] = useState(false);
 
-  console.log(movie);
+  /*   console.log(movie); */
 
   const CardOutDiv = styled.div`
     position: relative;
