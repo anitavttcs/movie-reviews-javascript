@@ -1,5 +1,15 @@
+
+:root{
+  --rubyRed: hsl(1, 67%, 35%);
+  --corn: hsl(58,77%,59%);
+  --blueGreen: hsl(183,65%,24%);
+  --orange: hsl(20,100%,60%);
+  --violet: hsl(253,57%,30%);
+}
+
 .App {
-  text-align: center;
+ background-color: var(--violet);
+ min-height: 100vh;
 }
 
 .navbar{
@@ -11,10 +21,51 @@
 }
 
 .movies{
-  display: flex;
-  flex-wrap: wrap;
+ 
 }
 
 .marker{
   background-color: red;
+}
+
+.cardContainerDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+
+/* Card */
+
+.cardOutDiv{
+  position: relative;
+  padding: .5rem;
+  width: 50%;
+  min-height: 15vh;
+  margin: 1rem 1rem;
+  background-color: hsl(253,57%,50%);
+  text-align: center;
+  color: whitesmoke;
+ 
+}
+
+
+.cardNameDiv{
+
+  text-decoration: none;
+  font-size: bolder;
+  text-transform: uppercase;
+  color: white
+}
+
+.addRevButton{
+ position: absolute;
+ right: 5px;
+bottom: 5px;
+cursor: pointer;
+}
+
+/* details--------------- */
+.detailsDiv{
+  color: whitesmoke
 }
