@@ -7,7 +7,9 @@ const getMovies = async (req, res) => {
 };
 
 const getMovie = async (req, res) => {
-
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${process.env.API_KEY}`);
+    const jsonResponse = await response.json();
+    res.send(jsonResponse);
 };
 
 module.exports = { getMovies, getMovie };
