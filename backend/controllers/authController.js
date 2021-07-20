@@ -33,12 +33,14 @@ async function loginCheck(req, res) {
 			fetch(data.token_endpoint, fetchOptions)
 				.then((res) => res.json())
 				.then((data) => {
+					// console.log(data.id_token);
 					userCheck(data, res);
 				})
 				.catch((err) =>
 					res.status(403).json({ msg: "Authentication failed." })
 				);
 		});
+
 };
 
 async function userCheck(data, res) {
