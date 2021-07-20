@@ -10,9 +10,21 @@ const Home = ({ user }) => {
 
   return (
     <div className="movies">
-      <div className="">
+      <div className="movieSearchDiv">
         <div className="">
-          <span className="">Search for movie title:</span>
+          <span className="">Search for movie by:</span>
+        </div>
+
+        <div className="radioButtonDiv">
+          <input type="radio" value="title" name="type" className="radioButton" />{" "}
+          Title
+          <input
+            type="radio"
+            value="user"
+            name="user"
+            className="radioButton"
+          />{" "}
+          User rev.
         </div>
         <input
           type="text"

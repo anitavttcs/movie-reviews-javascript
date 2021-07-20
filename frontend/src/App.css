@@ -4,7 +4,7 @@
   --corn: hsl(58,77%,59%);
   --blueGreen: hsl(183,65%,24%);
   --orange: hsl(20,100%,60%);
-  --violet: hsl(253,57%,30%);
+  --violet: hsl(253,57%,10%);
 }
 
 .App {
@@ -21,11 +21,12 @@
 }
 
 .movies{
- 
+ color: whitesmoke
 }
 
 .marker{
   background-color: red;
+ 
 }
 
 .cardContainerDiv{
@@ -34,6 +35,15 @@
   align-items: center;
  
 }
+
+/* Home */
+.movieSearchDiv{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 10px;
+}
+
 
 /* Card */
 
@@ -49,6 +59,9 @@
  
 }
 
+.detailButtonDiv{
+  cursor: pointer;
+}
 
 .cardNameDiv{
 
