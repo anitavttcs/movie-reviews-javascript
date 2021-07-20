@@ -18,6 +18,7 @@ connectDB();
 
 // Routes
 app.use("/api/login", require("./routes/authRoutes"));
+app.use("/api/movies", require("./routes/movieRoutes"));
 // app.use("/api/review", require("./routes/reviewRoutes"));
 
 // Middleware
