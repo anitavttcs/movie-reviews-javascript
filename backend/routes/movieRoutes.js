@@ -4,6 +4,7 @@ const movieController = require("../controllers/movieController");
 
 
 router.get("/", movieController.getMovies);
+router.get("/page:number", movieController.getMovies);
 router.get("/:id", movieController.getMovie);
 
 
