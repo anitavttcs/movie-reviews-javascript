@@ -7,10 +7,10 @@ const connectDB = require("./config/database");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
-	cors({
-		origin: "http://localhost:3000",
-		credentials: true,
-	})
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
 );
 
 // Database
@@ -26,5 +26,5 @@ app.use(require("./middleware/errorHandler"));
 
 // Server
 app.listen(port, () => {
-	console.log(`Listening at http://localhost:${port}`)
+  console.log(`Listening at http://localhost:${port}`);
 });

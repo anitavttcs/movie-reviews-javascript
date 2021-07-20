@@ -47,7 +47,7 @@
 
 /* Card */
 
-.cardOutDiv{
+/* .cardOutDiv{
   position: relative;
   padding: .5rem;
   width: 50%;
@@ -57,12 +57,17 @@
   text-align: center;
   color: whitesmoke;
 
-}
+} */
 
 .detailButtonDiv{
-  cursor: pointer;
+  cursor: pointer;    
   color: var(--corn)
 }
+/* .cardInDiv{
+  opacity: 1.0;
+  background-color: red;
+  height: 100%;
+} */
 
 .cardNameDiv{
 

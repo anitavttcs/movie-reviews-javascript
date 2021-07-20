@@ -4,13 +4,16 @@ const reviewController = require("../controllers/reviewController");
 
 // -- csak review posthoz kell majd --
 // const verifyToken = require("../middleware/verifyToken");
-// router.use(verifyToken); 
+// router.use(verifyToken);
 
 router.get("/", reviewController.getReviews);
 router.get("/:id", reviewController.getReview);
-router.get("/rating", reviewController.getRatings);  // ??
+router.get("/rating", reviewController.getRatings); // ??
 
 router.post("/", reviewController.postReview);
 
+router.get("/test", (req, res) => {
+  res.send(req.query);
+});
 
 module.exports = router;
