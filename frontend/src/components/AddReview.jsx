@@ -2,13 +2,22 @@ import { useState } from "react";
 import StarRating from "./StarRating";
 
 const AddReview = (props) => {
-  const [rating, setRating] = useState(3);
+  const [rating, setRating] = useState(5);
 
   const handleChange = (value) => {
     setRating(value);
   };
 
-  const sendReview = () => {};
+  const sendReview = () => {
+    const sendObject = {
+      movieId: props.movie.id,
+      userId: props.user.iat,
+      rating: rating,
+      review: document.querySelector(".inputArea").value,
+    };
+
+    console.log(sendObject);
+  };
 
   console.log(rating);
   /*   console.log("movie.id", props.movie.id);
@@ -16,8 +25,7 @@ const AddReview = (props) => {
   return (
     <div>
       <textarea
-        name=""
-        id=""
+        className="inputArea"
         cols="45"
         rows="5"
         placeholder="write your review here"
@@ -33,7 +41,9 @@ const AddReview = (props) => {
           onChange={handleChange}
         />
       </div>
+
       <div>
+        <button onClick={() => sendReview()}> send</button>
         <button onClick={props.close}> close</button>
       </div>
     </div>
