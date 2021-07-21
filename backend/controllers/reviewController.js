@@ -31,4 +31,4 @@ const postReview = async (req, res) => {
   if (newReview) res.status(201).json({ message: "review has been added" });
 };
 
-module.exports = { getReviews, getReview, getRatings, postReview };
+module.exports = { getReviews, getReview, postReview };
