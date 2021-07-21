@@ -75,7 +75,9 @@
   text-decoration: none;
   font-size: bolder;
   text-transform: uppercase;
-  color: white
+  font-size: 150%;
+  color: white;
+  background-color: hsla(0, 0%, 0%, .2);
 }
 
 .addRevButton{

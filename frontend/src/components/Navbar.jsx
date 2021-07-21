@@ -14,9 +14,9 @@ const Navbar = ({ setUser, user }) => {
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light ">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        {/*    <Link className="navbar-brand" to="/">
           Movie Review
-        </Link>
+        </Link> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -34,16 +34,16 @@ const Navbar = ({ setUser, user }) => {
             {user && (
               <>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/">
+                  {/*  <Link className="nav-link" to="/">
                     Reviews
-                  </Link>
+                  </Link> */}
                 </li>
               </>
             )}
 
             {user && (
               <>
-                <li className="nav-item">
+                <li className="nav-item ">
                   <Link className="nav-link" to="/">
                     Logged in as {user.name}
                   </Link>
