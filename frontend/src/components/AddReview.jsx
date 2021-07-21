@@ -7,16 +7,15 @@ const AddReview = (props) => {
   const handleChange = (value) => {
     setRating(value);
   };
+  console.log(props.user);
 
   const sendReview = () => {
     const sendObject = {
       movieId: props.movie.id,
-      userId: props.user.iat,
+      userId: props.user.sub,
       rating: rating,
       review: document.querySelector(".inputArea").value,
     };
-
-    console.log(sendObject);
 
     const url = "http://localhost:5000/api/review";
 
