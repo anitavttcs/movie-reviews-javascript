@@ -6,17 +6,19 @@ const Home = ({ user }) => {
   const [isMovieList, setMovieList] = useState([]);
   const search = () => {
     console.log("search", title);
+    const url = `http://localhost:5000/api/movies/searchByName?name=${title}`;
+    fetchAll(url);
   };
 
-  const fetchAll = async () => {
-    const result = await fetch("http://localhost:5000/api/movies/");
+  const fetchAll = async (url) => {
+    const result = await fetch(url);
     const jsonData = await result.json();
     //console.table(jsonData.results);
     setMovieList(jsonData.results);
   };
 
   useEffect(() => {
-    fetchAll();
+    fetchAll("http://localhost:5000/api/movies/");
   }, []);
 
   return (
@@ -32,7 +34,7 @@ const Home = ({ user }) => {
           <input
             type="radio"
             value="user"
-            name="user"
+            name="type"
             className="radioButton"
           />{" "}
           User rev.
@@ -53,7 +55,7 @@ const Home = ({ user }) => {
           ? isMovieList.map((data, iterator) => (
               <MovieCard user={user} key={iterator} movie={data} />
             ))
-          : ""}
+          : "Sorry I cant find a movie"}
       </div>
     </div>
   );
