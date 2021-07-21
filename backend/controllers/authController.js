@@ -1,8 +1,6 @@
 const jwt = require("jsonwebtoken");
 const authService = require("../services/authService");
 const fetch = require("node-fetch");
-// const jwtDecode = require("jwt-decode");
-// const { isValidObjectId } = require("mongoose");
 require("dotenv/config");
 
 

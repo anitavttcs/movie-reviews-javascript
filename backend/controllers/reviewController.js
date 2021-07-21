@@ -2,7 +2,6 @@ const Review = require("../models/Review");
 const User = require("../models/User");
 const verifyToken = require("../middleware/verifyToken");
 
-
 const getReviews = async (req, res) => {
 	const reviews = await Review.find({ movieId: req.params.id });
 	res.send(reviews);
@@ -14,13 +13,10 @@ const getReview = async (req, res) => {
 	res.send(review);
 };
 
-
 // ez??
 const getRatings = async (req, res) => {
-	const { movieId } = req.query.movie;
-
+  const { movieId } = req.query.movie;
 };
-
 
 // + verifyToken
 const postReview = async (req, res) => {
