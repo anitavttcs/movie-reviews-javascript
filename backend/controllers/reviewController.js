@@ -12,22 +12,22 @@ const getReview = async (req, res) => {
   res.send(review);
 };
 
-// ez??
 const getRatings = async (req, res) => {
   const { movieId } = req.query.movie;
 };
 
-// + verifyToken
 const postReview = async (req, res) => {
   console.log(req.body);
   const { movieId } = req.body;
-  const { userId } = req.body;
   const { review } = req.body;
   const { rating } = req.body;
 
+  const user = await User.findOne({ sub: req.body.userId });
+
+
   const newReview = await new Review({
     movieId,
-    userId,
+    userId: user._id,
     review,
     rating,
   }).save();
