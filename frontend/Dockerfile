@@ -1,2 +1,4 @@
-FROM nginx
-COPY ./build /usr/share/nginx/html
+FROM steebchen/nginx-spa:stable
+COPY ./build /app
+EXPOSE 80
+CMD ["nginx"]

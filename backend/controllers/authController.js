@@ -42,8 +42,8 @@ async function loginCheck(req, res) {
 };
 
 async function userCheck(data, res) {
+	console.log(data);
 	const { sub, name, email } = jwt.decode(data.id_token);
-
 	// const decoded = jwt.verify(data.id_token, process.env.SECRET);
 
 
