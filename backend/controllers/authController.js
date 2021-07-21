@@ -23,7 +23,7 @@ async function loginCheck(req, res) {
 					code: code,
 					client_id: clientId,
 					client_secret: clientSecret,
-					redirect_uri: "http://localhost:3000/login",
+					redirect_uri: `${process.env.FRONTEND_HOST}/login`,
 					grant_type: "authorization_code",
 				})
 			};
