@@ -18,6 +18,15 @@ const AddReview = (props) => {
 
     console.log(sendObject);
 
+    const url = "http://localhost:5000/api/review";
+
+    fetch(url, {
+      method: "POST",
+      mode: "cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(sendObject),
+    });
+
     props.close();
   };
 
