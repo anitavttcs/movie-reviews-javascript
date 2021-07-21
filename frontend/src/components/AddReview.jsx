@@ -17,6 +17,8 @@ const AddReview = (props) => {
     };
 
     console.log(sendObject);
+
+    props.close();
   };
 
   console.log(rating);

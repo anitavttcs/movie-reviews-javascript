@@ -40,7 +40,7 @@ const MovieCard = ({ movie, user }) => {
       details={isDetails}
     >
       <div className="cardInDiv">
-        <h5 className="cardNameDiv">{movie.original_title}</h5>
+        <div className="cardNameDiv">{movie.original_title}</div>
 
         {isDetails ? <Details movie={movie}></Details> : ""}
         <div className="detailButtonDiv" onClick={() => setDetails(!isDetails)}>

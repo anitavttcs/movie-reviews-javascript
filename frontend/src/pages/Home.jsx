@@ -4,9 +4,20 @@ import MovieCard from "../components/MovieCard";
 const Home = ({ user }) => {
   const [title, setTitle] = useState("");
   const [isMovieList, setMovieList] = useState([]);
+  const [isRadioButton, setRadioButton] = useState(1);
+
   const search = () => {
-    console.log("search", title);
-    const url = `http://localhost:5000/api/movies/searchByName?name=${title}`;
+    let url;
+
+    if (title.length === 0) {
+      url = "http://localhost:5000/api/movies/";
+    } else if (isRadioButton === 1) {
+      url = `http://localhost:5000/api/movies/searchByName?name=${title}`;
+    } else {
+      url = "http://localhost:5000/api/movies/";
+      console.log("this function is under construction");
+    }
+
     fetchAll(url);
   };
 
@@ -29,13 +40,22 @@ const Home = ({ user }) => {
         </div>
 
         <div className="radioButtonDiv">
-          <input type="radio" value="title" name="type" className="radioButton" />{" "}
+          <input
+            type="radio"
+            value="title"
+            name="type"
+            className="radioButton"
+            checked={isRadioButton === 1}
+            onClick={() => setRadioButton(1)}
+          />{" "}
           Title
           <input
             type="radio"
             value="user"
             name="type"
             className="radioButton"
+            checked={isRadioButton === 2}
+            onClick={() => setRadioButton(2)}
           />{" "}
           User rev.
         </div>
