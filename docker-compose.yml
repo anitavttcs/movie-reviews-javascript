@@ -1,0 +1,27 @@
+version: 3.9
+services:
+  frontend:
+    image: ${DOCKER_USERNAME}/frontend
+    ports:
+      - 3000:80
+  backend:
+    image: ${DOCKER_USERNAME}/backend
+    ports:
+      - 5000:5000
+    depends_on:
+      - mongodb
+    environment:
+      - DB_CONNECTION=mongodb://mongo:27017/test
+			- SECRET=dslfg3485gdsf344573nx32984
+			- CLIENT_ID=382341078182-spo8stdhro7lfrgvfjjardd8tdufe36j.apps.googleusercontent.com
+			- CLIENT_SECRET=g0TgpH7qGcZbZOmOLm7R7uxu
+			- API_KEY=7eec4ab3adbc3698c79f9ca17148dbe5
+  mongodb:
+    image: mongo:3.6.19-xenial
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:
+    driver: local

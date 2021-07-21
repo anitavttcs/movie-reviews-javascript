@@ -1,0 +1,39 @@
+language: node_js
+
+services:
+  - docker
+
+node_js:
+  - "14"
+
+stages:
+  - tests
+  - start
+  - name: deploy
+    if: (branch = main) AND (type != pull_request)
+
+jobs:
+  include:
+    - stage: tests
+      name: "run tests"
+      script:
+        - npx prettier --check "./**/*.js"
+        - cd backend/
+        - npm install
+        - npm run test
+
+    - stage: deploy
+      name: "build and deploy"
+      before_install:
+        - docker --version
+        - docker-compose --version
+      install:
+        - docker-compose build
+      script:
+        - docker-compose up -d
+        - docker-compose ps
+        - docker-compose stop
+        - docker-compose ps
+      after_success:
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        - docker-compose push
