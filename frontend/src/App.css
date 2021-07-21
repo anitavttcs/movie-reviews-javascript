@@ -61,7 +61,8 @@
 
 .detailButtonDiv{
   cursor: pointer;    
-  color: var(--corn)
+  color: var(--corn);
+  margin: 15px;
 }
 /* .cardInDiv{
   opacity: 1.0;
@@ -70,7 +71,7 @@
 } */
 
 .cardNameDiv{
-
+  margin: .5rem  0 1rem;
   text-decoration: none;
   font-size: bolder;
   text-transform: uppercase;
@@ -78,13 +79,24 @@
 }
 
 .addRevButton{
- position: absolute;
+/*  position: absolute;
  right: 5px;
-bottom: 5px;
+bottom: 5px; */
 cursor: pointer;
 }
 
 /* details--------------- */
 .detailsDiv{
-  color: whitesmoke
+  color: whitesmoke;
+  padding: 1rem 2rem;
+  background-color: hsla(0, 0%, 0%, .4);
+ /*  box-shadow: 0px 0px 5px hsla(0, 0%, 0%, .5); */
+
+}
+
+
+/* stars--------------- */
+.star {
+  display: inline-block;  
+  cursor: pointer;
 }

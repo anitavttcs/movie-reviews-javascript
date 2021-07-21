@@ -1,16 +1,17 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
-import Details from "./details";
 import styled from "styled-components";
 
-const MovieCard = ({ movie, user }) => {
-  const [isOpen, setOpen] = useState(false);
+import Details from "./details";
+import AddReview from "./AddReview";
 
+const MovieCard = ({ movie, user }) => {
+  const [isDetails, setDetails] = useState(false);
+  const [isReview, setReview] = useState(false);
   /*   console.log(movie); */
 
   const CardOutDiv = styled.div`
     position: relative;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     width: 50%;
     min-height: 15vh;
     margin: 1rem 1rem;
@@ -25,26 +26,40 @@ const MovieCard = ({ movie, user }) => {
 
   //console.log(`https://image.tmdb.org/t/p/original${movie.poster_path}`);
 
+  const revButtonClick = () => {
+    if (user) {
+      setReview(!isReview);
+    } else {
+      console.log("ide beszúrhatjuk a logint");
+    }
+  };
+
   return (
     <CardOutDiv
       background={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-      details={isOpen}
+      details={isDetails}
     >
       <div className="cardInDiv">
-        {/* <Link to={`/movie/${movie.id}`}> */}
-        {/* -- csak amíg nincs adat -- */}
-        <Link to={`/movie/`}>
-          <h5 className="cardNameDiv">{movie.original_title}</h5>
-        </Link>
-        {isOpen ? <Details movie={movie}></Details> : ""}
-        <div className="detailButtonDiv" onClick={() => setOpen(!isOpen)}>
-          {isOpen ? "Less Details" : "More Details"}
+        <h5 className="cardNameDiv">{movie.original_title}</h5>
+
+        {isDetails ? <Details movie={movie}></Details> : ""}
+        <div className="detailButtonDiv" onClick={() => setDetails(!isDetails)}>
+          {isDetails ? "Less Details" : "More Details"}
         </div>
 
-        <div className="addRevButton">
-          {user ? "add review" : "Sign up to write rewiev"}
+        <div className="reviewDiv">
+          {isReview ? (
+            <AddReview
+              close={() => setReview(false)}
+              user={user}
+              movie={movie}
+            ></AddReview>
+          ) : (
+            <div className="addRevButton" onClick={() => revButtonClick()}>
+              {user ? "Add review" : "Sign up to write rewiev"}
+            </div>
+          )}
         </div>
-        {user && <button className="">Add review</button>}
       </div>
     </CardOutDiv>
   );

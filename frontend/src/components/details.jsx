@@ -9,18 +9,6 @@ const Details = ({ movie }) => {
         <span>Relase Date: </span>
         <span>{movie.release_date}</span>
       </div>
-      <div>
-        <span>Director</span>
-      </div>
-      <div>
-        <span>Cast</span>
-      </div>
-      <div>
-        <span>Bármi</span>
-      </div>
-      <div>
-        <span>Még Bármibb</span>
-      </div>
     </div>
   );
 };
