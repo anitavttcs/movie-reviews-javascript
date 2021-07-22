@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
-const frontend_host = process.env.PROD
-  ? process.env.REACT_APP_FRONTEND_HOST_PROD
-  : process.env.REACT_APP_FRONTEND_HOST;
+const frontend_host =
+  process.env.NODE_ENV === "production"
+    ? process.env.REACT_APP_FRONTEND_HOST_PROD
+    : process.env.REACT_APP_FRONTEND_HOST;
 
 const Navbar = ({ setUser, user }) => {
   const logout = () => {

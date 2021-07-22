@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import MovieCard from "../components/MovieCard";
 
-const backend_host = process.env.PROD
-  ? process.env.REACT_APP_BACKEND_HOST_PROD
-  : process.env.REACT_APP_BACKEND_HOST;
+const backend_host =
+  process.env.NODE_ENV === "production"
+    ? process.env.REACT_APP_BACKEND_HOST_PROD
+    : process.env.REACT_APP_BACKEND_HOST;
 
 const Home = ({ user }) => {
   const [title, setTitle] = useState("");

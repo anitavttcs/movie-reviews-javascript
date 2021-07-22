@@ -1,6 +1,11 @@
 import { useState } from "react";
 import StarRating from "./StarRating";
 
+const backend_host =
+  process.env.NODE_ENV === "production"
+    ? process.env.REACT_APP_BACKEND_HOST_PROD
+    : process.env.REACT_APP_BACKEND_HOST;
+
 const AddReview = (props) => {
   const [rating, setRating] = useState(5);
 
@@ -17,7 +22,7 @@ const AddReview = (props) => {
       review: document.querySelector(".inputArea").value,
     };
 
-    const url = `${process.env.REACT_APP_BACKEND_HOST}/api/review`;
+    const url = `${backend_host}/api/review`;
 
     fetch(url, {
       method: "POST",

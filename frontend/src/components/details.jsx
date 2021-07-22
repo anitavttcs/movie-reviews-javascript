@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import Review from "./Review";
 
-const backend_host = process.env.PROD
-  ? process.env.REACT_APP_BACKEND_HOST_PROD
-  : process.env.REACT_APP_BACKEND_HOST;
+const backend_host =
+  process.env.NODE_ENV === "production"
+    ? process.env.REACT_APP_BACKEND_HOST_PROD
+    : process.env.REACT_APP_BACKEND_HOST;
 
 const Details = ({ movie }) => {
   const [isReviews, setReviews] = useState([]);
