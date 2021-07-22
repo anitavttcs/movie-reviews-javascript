@@ -8,7 +8,7 @@ const headers = {
 
 const getLogs = async () => {
   const res = await fetch(
-    "https://api.sloppy.io/v1/apps/movie-ratings/services/backend/apps/server/logs?&from=2012-06-21",
+    "https://api.sloppy.io/v1/apps/movie-ratings/services/backend/apps/server/logs?&from=2012-06-21&lines=10",
     {
       method: "GET",
       headers,
