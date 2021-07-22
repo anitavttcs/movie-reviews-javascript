@@ -8,7 +8,6 @@ COPY . ./
 RUN npm run build
 
 # production environment
-# FROM steebchen/nginx-spa:stable
 FROM nginx:stable-alpine
 COPY --from=build /app/build /app
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
