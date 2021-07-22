@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node start.js",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "deploy:sloppy": "node ./scripts/deploy_sloppy.js"
   },
   "author": "",
   "license": "ISC",
