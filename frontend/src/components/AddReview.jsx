@@ -7,7 +7,7 @@ const AddReview = (props) => {
   const handleChange = (value) => {
     setRating(value);
   };
-  console.log(props.user);
+  //console.log(props.user);
 
   const sendReview = () => {
     const sendObject = {
