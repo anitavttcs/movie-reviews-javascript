@@ -6,8 +6,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: process.env.FRONTEND_HOST,
-    credentials: true,
+    // origin: process.env.FRONTEND_HOST,
+    // credentials: true,
   })
 );
 
