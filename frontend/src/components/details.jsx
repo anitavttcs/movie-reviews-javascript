@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const Details = ({ movie }) => {
-  const [isReviews, setReviews] = useState([]);
+  const [isReviews, setReviews] = useState(null);
 
   console.log(movie);
 
@@ -12,6 +12,8 @@ const Details = ({ movie }) => {
     const jsonData = await result.json();
     setReviews(jsonData);
   };
+
+  console.log(isReviews);
 
   useEffect(() => {
     fetchReview(movie.id);
@@ -26,9 +28,7 @@ const Details = ({ movie }) => {
         <span>Relase Date: </span>
         <span>{movie.release_date}</span>
       </div>
-      <div className="reviewsDiv">
-        {isReviews.length > 0 ? "review" : "no reviews"}
-      </div>
+      <div className="reviewsDiv">{isReviews > 0 ? "review" : "no reviews"}</div>
     </div>
   );
 };
