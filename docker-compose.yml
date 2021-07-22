@@ -15,10 +15,6 @@ services:
     environment:
       - NODE_ENV=production
       - DB_CONNECTION=mongodb://mongodb:27017/test
-      - SECRET=dslfg3485gdsf344573nx32984
-      - CLIENT_ID=382341078182-spo8stdhro7lfrgvfjjardd8tdufe36j.apps.googleusercontent.com
-      - CLIENT_SECRET=g0TgpH7qGcZbZOmOLm7R7uxu
-      - API_KEY=7eec4ab3adbc3698c79f9ca17148dbe5
     ports:
       - 5000:5000
     networks:
