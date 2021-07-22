@@ -11,7 +11,7 @@ const Login = ({ checkToken }) => {
 		const code = url.searchParams.get("code");
 
 		axios
-			.post("http://localhost:5000/api/login", { code })
+			.post(process.env.REACT_APP_BACKEND_HOST, { code })
 			.then(res => {
 				localStorage.setItem("token", res.data.token);
 				history.push("/");
