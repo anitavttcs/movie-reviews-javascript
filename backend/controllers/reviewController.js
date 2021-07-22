@@ -1,6 +1,4 @@
 const Review = require("../models/Review");
-const User = require("../models/User");
-const verifyToken = require("../middleware/verifyToken");
 
 const getReviews = async (req, res) => {
   const reviews = await Review.find({}).populate("userId").exec();
@@ -21,8 +19,6 @@ const postReview = async (req, res) => {
   const { rating } = req.body;
 
   const { sub } = req.token;
-
-  // const user = await User.findOne({ sub });
 
   const newReview = await new Review({
     movieId,
