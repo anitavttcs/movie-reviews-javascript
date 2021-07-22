@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 const Details = ({ movie }) => {
   const [isReviews, setReviews] = useState([]);
 
+  console.log(movie);
+
   const fetchReview = async (id) => {
     const url = `http://localhost:5000/api/review/${id}`;
     console.log("url is", url);
