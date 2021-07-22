@@ -52,7 +52,7 @@ const deployToSloppy = async () => {
         "https://api.sloppy.io/v1/apps/movie-ratings/services/frontend/apps/app/restart"
       );
 
-      setTimeout(() => {
+      setTimeout(async () => {
         await restart(
           "https://api.sloppy.io/v1/apps/movie-ratings/services/backend/apps/server/restart"
         );
