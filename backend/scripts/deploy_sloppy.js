@@ -44,7 +44,7 @@ const deployToSloppy = async () => {
     );
     console.log("backend updated");
 
-    console.log("Preparing to restart apps...");
+    console.log("Waiting 45 soconds before restarting...");
 
     setTimeout(async () => {
       await restart(
@@ -56,7 +56,7 @@ const deployToSloppy = async () => {
       );
 
       console.log("apps restarted");
-    }, 15000);
+    }, 45000);
   } catch (error) {
     console.error(error);
   }
