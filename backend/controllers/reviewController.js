@@ -8,7 +8,7 @@ const getReviews = async (req, res) => {
 };
 
 const getReview = async (req, res) => {
-  const review = await Review.findOne({ movieId: req.params.id }).populate('userId').exec();
+  const review = await Review.find({ movieId: req.params.id }).populate('userId').exec();
   res.send(review);
 };
 
