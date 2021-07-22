@@ -62,4 +62,9 @@ const deployToSloppy = async () => {
   }
 };
 
-deployToSloppy();
+console.log("Waiting 30 seconds for dockerhub to refresh...");
+
+setTimeout(() => {
+  console.log("Starting deployment...");
+  deployToSloppy();
+}, 30000);
