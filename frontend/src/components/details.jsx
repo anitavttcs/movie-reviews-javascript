@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
 
+import Review from "./Review";
+
 const Details = ({ movie }) => {
   const [isReviews, setReviews] = useState([]);
 
-  console.log(movie);
+  //console.log(movie);
 
   const fetchReview = async (id) => {
     const url = `http://localhost:5000/api/review/${id}`;
-    console.log("url is", url);
+
     const result = await fetch(url);
     const jsonData = await result.json();
     setReviews(jsonData);
   };
 
-  console.log(isReviews.length);
+  //console.log(isReviews.length);
 
   useEffect(() => {
     fetchReview(movie.id);
@@ -28,7 +30,13 @@ const Details = ({ movie }) => {
         <span>Relase Date: </span>
         <span>{movie.release_date}</span>asd
       </div>
-      <div className="reviewsDiv">{isReviews.length ? "review" : "no reviews"}</div>
+      <div className="reviewsDiv">
+        {isReviews.length
+          ? isReviews.map((data, iterator) => (
+              <Review key={iterator} data={data}></Review>
+            ))
+          : "no reviews"}
+      </div>
     </div>
   );
 };
