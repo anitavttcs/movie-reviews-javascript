@@ -38,4 +38,5 @@ jobs:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         - docker-compose push
         - cd backend/
+        - npm install dotenv node-fetch
         - npm run "deploy:sloppy"
