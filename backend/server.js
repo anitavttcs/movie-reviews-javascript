@@ -13,7 +13,7 @@ app.use(
 
 // Test
 app.get("/test", (req, res) => {
-  res.status(200).json({ "message": "ok" });
+  res.status(200).json({ message: "ok" });
 });
 
 // Routes
@@ -23,6 +23,5 @@ app.use("/api/review", require("./routes/reviewRoutes"));
 
 // Middleware
 app.use(require("./middleware/errorHandler"));
-
 
 module.exports = app;
