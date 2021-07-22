@@ -3,7 +3,7 @@ const User = require("../models/User");
 const verifyToken = require("../middleware/verifyToken");
 
 const getReviews = async (req, res) => {
-  const reviews = await Review.find({ movieId: req.params.id });
+  const reviews = await Review.find({}).populate('userId').exec();
   res.send(reviews);
 };
 
