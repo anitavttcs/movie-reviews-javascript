@@ -52,12 +52,14 @@ const deployToSloppy = async () => {
         "https://api.sloppy.io/v1/apps/movie-ratings/services/frontend/apps/app/restart"
       );
 
-      await restart(
-        "https://api.sloppy.io/v1/apps/movie-ratings/services/backend/apps/server/restart"
-      );
+      setTimeout(() => {
+        await restart(
+          "https://api.sloppy.io/v1/apps/movie-ratings/services/backend/apps/server/restart"
+        );
 
-      console.log("apps restarted");
-      console.timeEnd("deploy");
+        console.log("apps restarted");
+        console.timeEnd("deploy");
+      }, 10000);
     }, 45000);
   } catch (error) {
     console.error(error);

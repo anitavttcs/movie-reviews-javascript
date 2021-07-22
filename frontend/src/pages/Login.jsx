@@ -17,7 +17,7 @@ const Login = ({ checkToken }) => {
     fetch(`${backend_host}/api/login`, {
       method: "POST",
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ code }),
     })

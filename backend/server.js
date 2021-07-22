@@ -2,7 +2,15 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-app.use(cors({ credentials: true, origin: true }));
+app.use(
+  cors({
+    credentials: true,
+    origin: true,
+    methods: ["POST", "GET"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    exposedHeaders: ["Content-Range", "X-Content-Range"],
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
