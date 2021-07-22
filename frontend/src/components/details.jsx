@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-
 import Review from "./Review";
+
+const backend_host = process.env.PROD
+  ? process.env.REACT_APP_BACKEND_HOST_PROD
+  : process.env.REACT_APP_BACKEND_HOST;
 
 const Details = ({ movie }) => {
   const [isReviews, setReviews] = useState([]);
@@ -8,7 +11,7 @@ const Details = ({ movie }) => {
   //console.log(movie);
 
   const fetchReview = async (id) => {
-    const url = `http://localhost:5000/api/review/${id}`;
+    const url = `${backend_host}/api/review/${id}`;
 
     const result = await fetch(url);
     const jsonData = await result.json();

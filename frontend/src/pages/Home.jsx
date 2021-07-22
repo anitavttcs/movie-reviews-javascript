@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import MovieCard from "../components/MovieCard";
 
+const backend_host = process.env.PROD
+  ? process.env.REACT_APP_BACKEND_HOST_PROD
+  : process.env.REACT_APP_BACKEND_HOST;
+
 const Home = ({ user }) => {
   const [title, setTitle] = useState("");
   const [isMovieList, setMovieList] = useState([]);
@@ -10,11 +14,11 @@ const Home = ({ user }) => {
     let url;
 
     if (title.length === 0) {
-      url = `${process.env.REACT_APP_BACKEND_HOST}/api/movies/`;
+      url = `${backend_host}/api/movies/`;
     } else if (isRadioButton === 1) {
-      url = `${process.env.REACT_APP_BACKEND_HOST}/api/movies/searchByName?name=${title}`;
+      url = `${backend_host}/api/movies/searchByName?name=${title}`;
     } else {
-      url = `${process.env.REACT_APP_BACKEND_HOST}/api/movies/`;
+      url = `${backend_host}/api/movies/`;
       console.log("this function is under construction");
     }
 
@@ -29,7 +33,7 @@ const Home = ({ user }) => {
   };
 
   useEffect(() => {
-    fetchAll(`${process.env.REACT_APP_BACKEND_HOST}/api/movies/`);
+    fetchAll(`${backend_host}/api/movies/`);
   }, []);
 
   return (
@@ -73,8 +77,8 @@ const Home = ({ user }) => {
       <div className="cardContainerDiv">
         {isMovieList
           ? isMovieList.map((data, iterator) => (
-            <MovieCard user={user} key={iterator} movie={data} />
-          ))
+              <MovieCard user={user} key={iterator} movie={data} />
+            ))
           : "Sorry I cant find a movie"}
       </div>
     </div>
