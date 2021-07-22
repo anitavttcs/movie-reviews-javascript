@@ -8,7 +8,6 @@ const reviewController = require("../controllers/reviewController");
 
 router.get("/", reviewController.getReviews);
 router.get("/:id", reviewController.getReview);
-router.get("/rating", reviewController.getRatings); // ??
 
 router.post("/", reviewController.postReview);
 

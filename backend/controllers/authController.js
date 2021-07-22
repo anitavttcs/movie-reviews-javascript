@@ -23,7 +23,7 @@ async function loginCheck(req, res) {
 					code: code,
 					client_id: clientId,
 					client_secret: clientSecret,
-					redirect_uri: "http://localhost:3000/login",
+					redirect_uri: `${process.env.FRONTEND_HOST}/login`,
 					grant_type: "authorization_code",
 				})
 			};
@@ -42,8 +42,8 @@ async function loginCheck(req, res) {
 };
 
 async function userCheck(data, res) {
+	console.log(data);
 	const { sub, name, email } = jwt.decode(data.id_token);
-
 	// const decoded = jwt.verify(data.id_token, process.env.SECRET);
 
 

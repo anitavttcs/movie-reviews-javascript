@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Movie from "./pages/Movie";
 
+require('dotenv').config();
+
 function App() {
   const [user, setUser] = useState(null);
 

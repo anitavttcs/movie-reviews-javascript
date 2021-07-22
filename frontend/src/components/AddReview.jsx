@@ -17,7 +17,7 @@ const AddReview = (props) => {
       review: document.querySelector(".inputArea").value,
     };
 
-    const url = "http://localhost:5000/api/review";
+    const url = `${process.env.REACT_APP_BACKEND_HOST}/api/review`;
 
     fetch(url, {
       method: "POST",
