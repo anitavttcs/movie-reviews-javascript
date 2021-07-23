@@ -32,14 +32,14 @@ const Details = ({ movie }) => {
       <div className="overviewDiv">{movie.overview}</div>
       <div className="relaseDiv">
         <span>Relase Date: </span>
-        <span>{movie.release_date}</span>asd
+        <span>{movie.release_date}</span>
       </div>
       <div className="reviewsDiv">
         <div className="reviewHead">Reviews</div>
         {isReviews.length
           ? isReviews.map((data, iterator) => (
-              <Review key={iterator} data={data}></Review>
-            ))
+            <Review key={iterator} data={data}></Review>
+          ))
           : "no reviews"}
       </div>
     </div>
