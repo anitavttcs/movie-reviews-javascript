@@ -16,8 +16,8 @@ const Navbar = ({ setUser, user }) => {
   };
 
   return (
-    <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light ">
-      <div className="container-fluid">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-dark  navBack">
+      <div className="">
         {/*    <Link className="navbar-brand" to="/">
           Movie Review
         </Link> */}

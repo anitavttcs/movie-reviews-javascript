@@ -5,6 +5,7 @@
   --blueGreen: hsl(183,65%,24%);
   --orange: hsl(20,100%,60%);
   --violet: hsl(253,57%,10%);
+  --violet2: hsl(253,57%,20%);
 }
 
 .App {
@@ -17,7 +18,7 @@
 }
 
 .content{
-  margin: 70px 20px 20px 20px;
+  margin:55px 20px 20px 0px;
 }
 
 .movies{
@@ -34,7 +35,7 @@
 }
 
 .marker{
- 
+ background-color: red;
  
 }
 
@@ -53,7 +54,13 @@
   padding: 10px;
 }
 
+/* --navbar */
 
+.navBack{
+  background-color: var(--violet2);
+}
+
+ 
 /* Card */
 
 /* .cardOutDiv{
