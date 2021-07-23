@@ -12,7 +12,8 @@ const Reviews = (props) => {
   return (
     <div className="reviewOut">
       <div className="revUserName">
-        <span>{props.data.userId.name}</span>
+        <span>{props.data.username}</span>
+        {/* <span>{props.data.userId.name}</span> */}
         <span> says:</span>
       </div>
       <div className="reviewBlock">{props.data.review}</div>

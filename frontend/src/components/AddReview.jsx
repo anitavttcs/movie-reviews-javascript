@@ -14,20 +14,24 @@ const AddReview = (props) => {
   };
   //console.log(props.user);
 
-  const sendReview = () => {
+  const sendReview = async () => {
     const sendObject = {
       movieId: props.movie.id,
-      userId: props.user.sub,
+      // userId: props.user.sub,
       rating: rating,
       review: document.querySelector(".inputArea").value,
     };
 
     const url = `${backend_host}/api/review`;
+    const jwt = localStorage.getItem("token");
 
-    fetch(url, {
+    await fetch(url, {
       method: "POST",
       mode: "cors",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "authorization": `Bearer ${jwt}`,
+      },
       body: JSON.stringify(sendObject),
     });
 
