@@ -62,8 +62,8 @@ const AddReview = (props) => {
       </div>
 
       <div className="addRevButtons">
-        <span onClick={props.close}> back</span>
-        <span onClick={() => sendReview()}> send</span>
+        <span className="button" onClick={props.close}> back</span>
+        <span className="button" onClick={() => sendReview()}> send</span>
       </div>
     </div>
   );

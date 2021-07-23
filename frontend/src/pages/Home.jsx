@@ -79,9 +79,9 @@ const Home = ({ user }) => {
       <div className="cardContainerDiv">
         {isMovieList
           ? isMovieList.map((data, iterator) => (
-              <MovieCard user={user} key={iterator} movie={data} />
-            ))
-          : "Sorry I cant find a movie"}
+            <MovieCard user={user} key={iterator} movie={data} />
+          ))
+          : "Sorry I can't find a movie"}
       </div>
     </div>
   );

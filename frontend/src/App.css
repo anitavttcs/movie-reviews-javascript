@@ -32,6 +32,7 @@
 .searchButton{
   margin: 0 0 0 1rem;
   color: yellow;
+  cursor: pointer;  
 }
 
 .marker{
@@ -189,4 +190,8 @@ cursor: pointer;
 
 textarea{
   border-radius: .5rem;
+}
+
+.button{
+  cursor: pointer;  
 }
