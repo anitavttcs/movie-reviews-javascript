@@ -41,10 +41,10 @@ const Home = ({ user }) => {
     <div className="movies">
       <div className="movieSearchDiv">
         <div className="">
-          <span className="">Search for movie by:</span>
+          <span className="">Search for movie by title:</span>
         </div>
 
-        <div className="radioButtonDiv">
+        {/*     <div className="radioButtonDiv">
           <input
             type="radio"
             value="title"
@@ -63,16 +63,17 @@ const Home = ({ user }) => {
             onClick={() => setRadioButton(2)}
           />{" "}
           User rev.
-        </div>
+        </div> */}
+
         <input
           type="text"
-          className=""
+          className="searchInput"
           placeholder=""
           onChange={(e) => setTitle(e.target.value)}
         />
-        <button className="" onClick={search}>
+        <div className="searchButton" onClick={search}>
           Search
-        </button>
+        </div>
       </div>
 
       <div className="cardContainerDiv">
