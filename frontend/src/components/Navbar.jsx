@@ -7,8 +7,7 @@ const Navbar = ({ setUser, user }) => {
   };
 
   const googleSignIn = () => {
-    window.location.href =
-      `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&prompt=select_account&client_id=382341078182-spo8stdhro7lfrgvfjjardd8tdufe36j.apps.googleusercontent.com&scope=openid%20profile%20email&redirect_uri=${process.env.REACT_APP_FRONTEND_HOST}/login`;
+    window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&prompt=select_account&client_id=382341078182-spo8stdhro7lfrgvfjjardd8tdufe36j.apps.googleusercontent.com&scope=openid%20profile%20email&redirect_uri=${process.env.REACT_APP_FRONTEND_HOST}/login`;
   };
 
   return (

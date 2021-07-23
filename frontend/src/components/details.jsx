@@ -24,13 +24,14 @@ const Details = ({ movie }) => {
   // console.log(movie);
   return (
     <div className="detailsDiv">
-      <div>Overview:</div>
-      <div>{movie.overview}</div>
-      <div>
+      <div className="detailsHead">Overview:</div>
+      <div className="overviewDiv">{movie.overview}</div>
+      <div className="relaseDiv">
         <span>Relase Date: </span>
         <span>{movie.release_date}</span>asd
       </div>
       <div className="reviewsDiv">
+        <div className="reviewHead">Reviews</div>
         {isReviews.length
           ? isReviews.map((data, iterator) => (
               <Review key={iterator} data={data}></Review>

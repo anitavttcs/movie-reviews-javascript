@@ -102,3 +102,59 @@ cursor: pointer;
   display: inline-block;  
   cursor: pointer;
 }
+
+/* -------Details */
+.detailsHead{
+  font-size: 130%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 10px;
+}
+
+.overviewDiv,
+.relaseDiv,
+.reviewsDiv {
+  background-color: rgba(0,0,0, .2);
+  border-radius: 5px;
+}
+
+.reviewsDiv{
+  margin: 1.5rem 0 0 0 ;
+}
+
+.reviewHead{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 130%;
+}
+
+/* -------rewiev */
+.reviewOut{
+  margin: .5rem 0 0 0 ;
+  padding: .5rem .1rem 0;
+  background-color:rgba(255,255,255 ,.8);
+  color: black;
+  text-shadow: none;
+  text-align: left;
+  border-radius: .3rem;
+  
+}
+
+.revUserName{
+  margin:  0 .3rem .2rem ;
+}
+.revUserName span:nth-child(1){
+  background-color: black;
+  color: whitesmoke;
+  font-weight: bold;
+
+}
+
+.reviewBlock{
+  margin: 0 .5rem;
+}
+
+.starsReview{
+  color: red;
+  text-align: center;
+}
