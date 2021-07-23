@@ -44,7 +44,7 @@ const deployToSloppy = async () => {
     );
     console.log("backend updated");
 
-    console.log("Waiting 45 soconds before restarting...");
+    console.log("Waiting 30 soconds before restarting...");
     console.time("deploy");
 
     setTimeout(async () => {
@@ -60,15 +60,14 @@ const deployToSloppy = async () => {
         console.log("apps restarted");
         console.timeEnd("deploy");
       }, 10000);
-    }, 45000);
+    }, 30000);
   } catch (error) {
     console.error(error);
   }
 };
 
-console.log("Waiting 30 seconds for dockerhub to refresh...");
+console.log("Starting deployment...");
 
 setTimeout(() => {
-  console.log("Starting deployment...");
   deployToSloppy();
-}, 30000);
+}, 5000);
