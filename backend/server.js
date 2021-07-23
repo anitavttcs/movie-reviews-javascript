@@ -2,14 +2,23 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: process.env.FRONTEND_HOST,
     credentials: true,
+    origin: "*",
+    methods: ["POST", "GET"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "Origin",
+      "X-Requested-With",
+      "Accept",
+    ],
+    exposedHeaders: ["Content-Range", "X-Content-Range"],
   })
 );
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Test
 app.get("/test", (req, res) => {
