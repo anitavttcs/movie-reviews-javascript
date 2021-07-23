@@ -42,7 +42,7 @@ const AddReview = (props) => {
       <textarea
         className="inputArea"
         cols="45"
-        rows="5"
+        rows="3"
         placeholder="write your review here"
       ></textarea>
 
@@ -57,9 +57,9 @@ const AddReview = (props) => {
         />
       </div>
 
-      <div>
-        <button onClick={() => sendReview()}> send</button>
-        <button onClick={props.close}> close</button>
+      <div className="addRevButtons">
+        <span onClick={props.close}> back</span>
+        <span onClick={() => sendReview()}> send</span>
       </div>
     </div>
   );
